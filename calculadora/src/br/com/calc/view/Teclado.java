@@ -16,10 +16,14 @@ public class Teclado extends JPanel {
     GridBagConstraints c = new GridBagConstraints();
     setLayout(layout);
 
+    c.fill = GridBagConstraints.BOTH; //preenche os espaços em braco entre os botões
+    c.weightx = 1;  //preenche os espaços em branco baseado no eixo x e y
+    c.weighty = 1;
+
     //Linha 1
-    adicionarBotao("AC", BG_OTHERS, c, 0, 0);
-    adicionarBotao("+/-", BG_OTHERS, c, 1, 0);
-    adicionarBotao("%", BG_OTHERS, c, 2, 0);
+    c.gridwidth = 3; //mexendo na largura do botão através do gridWidth
+    adicionarBotao("AC", BG_PADRAO, c, 0, 0);
+    c.gridwidth = 1;
     adicionarBotao("/", BG_OPERTATION, c, 3, 0);
 
     //Linha 2
@@ -41,8 +45,9 @@ public class Teclado extends JPanel {
     adicionarBotao("+", BG_OPERTATION, c, 3, 3);
 
     //Linha 5
+    c.gridwidth = 2;
     adicionarBotao("0", BG_OTHERS, c, 0, 4);
-    adicionarBotao("0", BG_OTHERS, c, 1, 4);
+    c.gridwidth = 1;
     adicionarBotao(".", BG_OTHERS, c, 2, 4);
     adicionarBotao("=", BG_OPERTATION, c, 3, 4);
   }
