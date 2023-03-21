@@ -1,5 +1,6 @@
 package br.com.calc.view;
 
+import br.com.calc.model.Memoria;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -23,10 +24,11 @@ public class Teclado extends JPanel implements ActionListener {
     c.weighty = 1;
 
     //Linha 1
-    c.gridwidth = 3; //mexendo na largura do botão através do gridWidth
+    c.gridwidth = 2; //mexendo na largura do botão através do gridWidth
     adicionarBotao("AC", BG_PADRAO, c, 0, 0);
     c.gridwidth = 1;
-    adicionarBotao("/", BG_OPERTATION, c, 3, 0);
+    adicionarBotao("/", BG_OPERTATION, c, 2, 0);
+    adicionarBotao("+/-", BG_OPERTATION, c, 3, 0);
 
     //Linha 2
     adicionarBotao("7", BG_OTHERS, c, 0, 1);
@@ -65,6 +67,6 @@ public class Teclado extends JPanel implements ActionListener {
   @Override
   public void actionPerformed(ActionEvent e) {
     JButton botao = (JButton) e.getSource(); //retornando qual foi o botão clicado
-    System.out.println("Clicou..." + botao.getText());
+    Memoria.getInstance().processarComando(botao.getText());
   }
 }
