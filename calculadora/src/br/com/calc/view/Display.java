@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 public class Display extends JPanel {
 
-  //Define o texto dentro do botão
+  //Define o texto dentro do display
   private JLabel numeros;
   private final Color BG_PADRAO = new Color(72, 70, 70);
 
@@ -16,7 +16,7 @@ public class Display extends JPanel {
     setBackground(BG_PADRAO);
     numeros = new JLabel("123");
     numeros.setForeground(Color.WHITE);
-    numeros.setFont(new Font("courier", Font.PLAIN, 35));
+    numeros.setFont(new Font("courier", Font.BOLD, 35));
 
     setLayout(new FlowLayout(FlowLayout.RIGHT, 10, 15)); //alinhamento de texto com o FlowLayout
     add(numeros);

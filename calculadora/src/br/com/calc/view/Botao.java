@@ -1,16 +1,18 @@
 package br.com.calc.view;
 
 import java.awt.Color;
+import java.awt.Font;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 
 public class Botao extends JButton {
 
-
-  private final Color BG_PADRAO = new Color(9, 108, 147);
-  private final Color BG_OPERTATION = new Color(208, 161, 6);
-  private final Color BG_OTHERS = new Color(0, 0, 0);
-
-  public Botao() {
-    setBackground(BG_PADRAO);
+  public Botao(String texto, Color cor) {
+    setText(texto);
+    setOpaque(true); //deixando o botão mais claro
+    setForeground(Color.white);
+    setBackground(cor);
+    setFont(new Font("courier", Font.PLAIN, 20));
+    setBorder(BorderFactory.createLineBorder(Color.black));
   }
 }
