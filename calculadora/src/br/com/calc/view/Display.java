@@ -1,5 +1,6 @@
 package br.com.calc.view;
 
+import br.com.calc.model.Memoria;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -14,7 +15,7 @@ public class Display extends JPanel {
 
   public Display() {
     setBackground(BG_PADRAO);
-    numeros = new JLabel("123");
+    numeros = new JLabel(Memoria.getInstance().getTextoAtual());
     numeros.setForeground(Color.WHITE);
     numeros.setFont(new Font("courier", Font.BOLD, 35));
 
